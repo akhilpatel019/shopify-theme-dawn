@@ -30,9 +30,71 @@
         "bg_color": "#fffaec",
         "bg_gradient": ""
       }
+    },
+    "logo_carousel_EFcMjk": {
+      "type": "logo-carousel",
+      "blocks": {
+        "logo_box_4AVtKP": {
+          "type": "logo_box",
+          "settings": {
+            "logo_img": "shopify://shop_images/slide-logo-1.png"
+          }
+        },
+        "logo_box_qwgtUX": {
+          "type": "logo_box",
+          "settings": {
+            "logo_img": "shopify://shop_images/slide-logo-2.png"
+          }
+        },
+        "logo_box_UhbzXC": {
+          "type": "logo_box",
+          "settings": {
+            "logo_img": "shopify://shop_images/slide-logo-3.png"
+          }
+        },
+        "logo_box_jYfjDr": {
+          "type": "logo_box",
+          "settings": {
+            "logo_img": "shopify://shop_images/slide-logo-4.png"
+          }
+        },
+        "logo_box_aLFpE7": {
+          "type": "logo_box",
+          "settings": {
+            "logo_img": "shopify://shop_images/slide-logo-5.png"
+          }
+        },
+        "logo_box_QzmBez": {
+          "type": "logo_box",
+          "settings": {
+            "logo_img": "shopify://shop_images/slide-logo-6.png"
+          }
+        }
+      },
+      "block_order": [
+        "logo_box_4AVtKP",
+        "logo_box_qwgtUX",
+        "logo_box_UhbzXC",
+        "logo_box_jYfjDr",
+        "logo_box_aLFpE7",
+        "logo_box_QzmBez"
+      ],
+      "name": "Logo Carousel",
+      "settings": {
+        "carousel_title": "AS SEEN ON",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "bg_type": "color",
+        "bg_color_source": "global_bg_1",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
-    "main_hero_section_Dr79UB"
+    "main_hero_section_Dr79UB",
+    "logo_carousel_EFcMjk"
   ]
 }
