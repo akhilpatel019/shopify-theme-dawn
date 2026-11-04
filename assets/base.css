@@ -22,6 +22,9 @@ collection-component {
   --font-zawya-pro-wide: "ZawyaPro Wide", sans-serif;
 }
 
+body{
+  font-family: var(--font-sofia-pro);
+}
 
 .rte-custom > * {
     margin: 0;
@@ -29,6 +32,16 @@ collection-component {
 
 p{
   margin: 0;
+}
+
+
+.section-title {
+  font-size: 40px;
+  font-family: var(--font-caprasimo);
+  font-weight: 400;
+  line-height: 100%;
+  color: var( --custom-main-text-color);
+  text-align: center;
 }
 
 
