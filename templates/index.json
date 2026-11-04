@@ -91,10 +91,27 @@
         "bg_color": "",
         "bg_gradient": ""
       }
+    },
+    "nw_featured_collection_YUndBH": {
+      "type": "nw-featured-collection",
+      "name": "Painting collection",
+      "settings": {
+        "collection_title": "Best Sellers",
+        "choose_collection": "best-sellers",
+        "padding_top": 64,
+        "padding_bottom": 64,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "color",
+        "bg_color_source": "global_white",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
     "main_hero_section_Dr79UB",
-    "logo_carousel_EFcMjk"
+    "logo_carousel_EFcMjk",
+    "nw_featured_collection_YUndBH"
   ]
 }
