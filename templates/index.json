@@ -98,6 +98,8 @@
       "settings": {
         "collection_title": "Best Sellers",
         "choose_collection": "best-sellers",
+        "url_for_btn": "shopify://collections/best-sellers",
+        "button_text": "SHOP ALL",
         "padding_top": 64,
         "padding_bottom": 64,
         "padding_top_mobile": 32,
@@ -107,11 +109,33 @@
         "bg_color": "",
         "bg_gradient": ""
       }
+    },
+    "nw_collection_list_PctpDX": {
+      "type": "nw-collection-list",
+      "name": "Collection List",
+      "settings": {
+        "section_title": "Shop By Category",
+        "collections": [
+          "best-sellers",
+          "family-nights",
+          "kids-lessons",
+          "virtual-paint-party"
+        ],
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "none",
+        "bg_color_source": "global_primary",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
     "main_hero_section_Dr79UB",
     "logo_carousel_EFcMjk",
-    "nw_featured_collection_YUndBH"
+    "nw_featured_collection_YUndBH",
+    "nw_collection_list_PctpDX"
   ]
 }

@@ -3,7 +3,6 @@
 
 <div class="nw-collection-wrapper">
   <div class="page-width">
-
     {% if section.settings.collection_title != blank %}
       <h2 class="section-title">
         {{ section.settings.collection_title }}
@@ -11,107 +10,112 @@
     {% endif %}
 
     <div class="product-section-grid">
+      {% assign featured_collection = section.settings.choose_collection %}
 
-     {% assign featured_collection = section.settings.choose_collection %}
+      {% if featured_collection != blank %}
+        {% for product in featured_collection.products %}
+          <div class="product">
+            <a href="{{ product.url }}">
+              {% if product.featured_image != blank %}
+                {{
+                  product.featured_image
+                  | image_url: width: 600
+                  | image_tag: loading: 'lazy', alt: product.featured_image.alt
+                }}
+              {% endif %}
+            </a>
 
-{% if featured_collection != blank %}
+            <div class="product-badge">
+              {% assign product_badges = product.metafields.custom.product_badges.value %}
 
-  {% for product in featured_collection.products %}
+              {% for badge in product_badges %}
+                {% case badge %}
+                  {% when 'JUNIOR PAINTING' %}
+                    <span class="junior-painting">{{ badge }}</span>
 
-    <div class="product">
+                  {% when 'NEW' %}
+                    <span class="new">{{ badge }}</span>
 
-      <a href="{{ product.url }}">
-        {% if product.featured_image != blank %}
-          {{
-            product.featured_image
-            | image_url: width: 600
-            | image_tag: loading: 'lazy', alt: product.featured_image.alt
-          }}
-        {% endif %}
-      </a>
+                  {% when 'DIPTYCH' %}
+                    <span class="diptych">{{ badge }}</span>
+                {% endcase %}
+              {% endfor %}
+            </div>
 
-      <div class="product-badge">
-        {% assign product_badges = product.metafields.custom.product_badges.value %}
+            <div class="product-info">
+              <div class="product-rate">
+                <img
+                  src="https://cdn.shopify.com/s/files/1/0842/3030/7949/files/product-five-star.svg?v=1793790373"
+                  alt=""
+                />
+                <span>4 reviews</span>
+              </div>
 
-        {% for badge in product_badges %}
-          {% case badge %}
-            {% when 'JUNIOR PAINTING' %}
-              <span class="junior-painting">{{ badge }}</span>
+              <h3 class="product-title">
+                <a href="{{ product.url }}">
+                  {{ product.title }}
+                </a>
+              </h3>
 
-            {% when 'NEW' %}
-              <span class="new">{{ badge }}</span>
+              <h6 class="product-prize">
+                {% if product.price_varies %}
+                  {{ product.price_min | money }} to {{ product.price_max | money }}
+                {% else %}
+                  {{ product.price | money }}
+                {% endif %}
+              </h6>
+            </div>
 
-            {% when 'DIPTYCH' %}
-              <span class="diptych">{{ badge }}</span>
-          {% endcase %}
+            {% form 'product', product %}
+              <input
+                type="hidden"
+                name="id"
+                value="{{ product.selected_or_first_available_variant.id }}"
+              >
+
+              <button
+                type="submit"
+                name="add"
+                class="product-btn"
+                {% unless product.available %}
+                  disabled
+                {% endunless %}
+              >
+                <span>
+                  {% if product.available %}
+                    Add to Cart
+                  {% else %}
+                    Sold Out
+                  {% endif %}
+                </span>
+
+                {% if product.available %}
+                  <span>
+                    <img
+                      src="https://cdn.shopify.com/s/files/1/0842/3030/7949/files/plus-icon.svg?v=1793790684"
+                      alt=""
+                    />
+                  </span>
+                {% endif %}
+              </button>
+            {% endform %}
+          </div>
         {% endfor %}
-      </div>
 
-      <div class="product-info">
-        <div class="product-rate">
-          <img src="https://cdn.shopify.com/s/files/1/0842/3030/7949/files/product-five-star.svg?v=1793790373" alt="" />
-          <span>4 reviews</span>
+      {% else %}
+        <p>Please select a collection</p>
+      {% endif %}
+    </div>
+
+
+
+    <div class="product-btn-box">
+          <a href="{{section.settings.url_for_btn}}" class="primary-btn">{{section.settings.button_text}}</a>
+          <p>274 options for paintings of your choice</p>
         </div>
-
-        <h3 class="product-title">
-          <a href="{{ product.url }}">
-            {{ product.title }}
-          </a>
-        </h3>
-
-        <h6 class="product-prize">
-          {% if product.price_varies %}
-            {{ product.price_min | money }} to {{ product.price_max | money }}
-          {% else %}
-            {{ product.price | money }}
-          {% endif %}
-        </h6>
-      </div>
-
-      {% form 'product', product %}
-        <input
-          type="hidden"
-          name="id"
-          value="{{ product.selected_or_first_available_variant.id }}"
-        >
-
-        <button
-          type="submit"
-          name="add"
-          class="product-btn"
-          {% unless product.available %}
-            disabled
-          {% endunless %}
-        >
-          <span>
-            {% if product.available %}
-              Add to Cart
-            {% else %}
-              Sold Out
-            {% endif %}
-          </span>
-
-          {% if product.available %}
-            <span>
-             <img src="https://cdn.shopify.com/s/files/1/0842/3030/7949/files/plus-icon.svg?v=1793790684" alt="" />
-            </span>
-          {% endif %}
-        </button>
-      {% endform %}
-
-    </div>
-
-  {% endfor %}
-
-{% else %}
-  <p>Please select a collection</p>
-{% endif %}
-
-    </div>
 
   </div>
 </div>
-
 
 {% schema %}
 {
@@ -133,6 +137,19 @@
       "label": "Choose collection",
       "id": "choose_collection"
     },
+
+     {
+      "type": "url",
+      "label": "Please url for btn",
+      "id": "url_for_btn"
+    },
+    {
+      "type": "text",
+      "label": "Add button text",
+      "id": "button_text",
+      "default": "SHOP ALL"
+    },
+
     {
       "type": "header",
       "content": "Spacing"

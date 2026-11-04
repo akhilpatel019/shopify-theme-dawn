@@ -130,17 +130,7 @@
   line-height: 100%;
 }
 
-.primary-btn {
- color: var(--custom-main-text-color);
-  color: #ffffff;
-  padding: 16px 70px;
-  font-size: 20px;
-  text-decoration: none;
-  border-radius: 35px;
-  font-weight: 600;
-  letter-spacing: 0.8px;
-  text-transform: uppercase;
-}
+
 
 
 
@@ -249,10 +239,7 @@
     gap: 4px;
   }
 
-  .primary-btn {
-    padding: 14px 60px;
-    font-size: 18px;
-  }
+
 
   .product-btn-box {
     margin-top: 40px;
