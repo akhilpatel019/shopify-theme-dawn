@@ -1,0 +1,107 @@
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  width: 100%;
+}
+
+.logo-text {
+  flex: 0 0 auto;
+}
+
+.logo-text h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--custom-main-text-color);
+  white-space: nowrap;
+  font-family: var(--font-sofia-pro);
+}
+
+.logo-slider-wrapper {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.logo-slider {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+/* Continuous marquee animation timing */
+.logo-slider .swiper-wrapper {
+  align-items: center;
+  transition-timing-function: linear !important;
+}
+
+.logo-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease;
+}
+
+.logo-slider .swiper-slide img {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+/* Desktop: Display logos normally without slider */
+@media (min-width: 1024px) {
+  .logo-slider .swiper-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: none !important;
+    transition: none !important;
+    width: 100% !important;
+  }
+
+  .logo-slider .swiper-slide {
+    width: auto !important;
+    flex: 0 1 auto;
+    margin: 0 !important;
+  }
+
+  /* Hide duplicate slides on desktop */
+  .logo-slider .swiper-slide:nth-child(n + 7) {
+    display: none !important;
+  }
+}
+
+/* Tablet and mobile: Enable slider */
+@media (max-width: 1023px) {
+  .logo-section {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .logo-text {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo-slider-wrapper {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .logo-slider {
+    width: 100%;
+  }
+
+  .logo-slider .swiper-slide {
+    flex-shrink: 0;
+  }
+}

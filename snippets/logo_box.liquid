@@ -1,0 +1,10 @@
+<div class="swiper-slide" {{ block.shopify_attributes }}>
+  {% if block.settings.logo_img != blank %}
+    {{
+      block.settings.logo_img
+      | image_url: width: 300
+      | image_tag: alt: block.settings.logo_img.alt
+    }}
+  {% endif %}
+</div>
+
