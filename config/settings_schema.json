@@ -7,6 +7,54 @@
     "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
     "theme_support_url": "https://support.shopify.com/"
   },
+
+
+  {
+    "name": "Global colors",
+    "settings": [
+      {
+        "type": "header",
+         "content": "Set global colors"
+      },
+       {
+      "type": "color",
+      "label": "Primary color",
+      "id": "primary_color",
+      "default": "#fff9a3"
+    },
+    {
+      "type": "color",
+      "label": "Bg-color option 1",
+      "id": "bg_color_option_1",
+      "default": "#c3eeff"
+    },
+    {
+      "type": "color",
+      "label": "Main text color",
+      "id": "main_text_color",
+      "default": "#0c187e"
+    },
+    {
+      "type": "color",
+      "label": "Bg-color option 2",
+      "id": "bg_color_option_2",
+      "default": "#fffaec"
+    },
+    {
+      "type": "color",
+      "label": "Black color",
+      "id": "black_color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "label": "White color",
+      "id": "white_color",
+      "default": "#ffffff"
+    }
+    ]
+  },
+
   {
     "name": "t:settings_schema.logo.name",
     "settings": [
@@ -154,7 +202,7 @@
         "id": "page_width",
         "min": 1000,
         "max": 1600,
-        "step": 100,
+        "step": 10,
         "default": 1200,
         "unit": "px",
         "label": "t:settings_schema.layout.settings.page_width.label"

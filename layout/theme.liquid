@@ -246,6 +246,19 @@
         --variant-pills-shadow-blur-radius: {{ settings.variant_pills_shadow_blur }}px;
       }
 
+      /* custom root for colors   */
+
+      :root{
+        --custom-primary-color: {{settings.primary_color}};
+        --custom-bg-color-1: {{settings.bg_color_option_1}};
+        --custom-main-text-color: {{settings.main_text_color}};
+        --custom-bg-color-2: {{settings.bg_color_option_2}};
+        --custom-color-black: {{settings.black_color}};
+         --custom-color-white: {{settings.white_color}};
+      }
+
+
+
       *,
       *::before,
       *::after {
@@ -319,6 +332,8 @@
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
+
+    {% render 'custom-fonts' %}
   </head>
 
   <body class="gradient{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">

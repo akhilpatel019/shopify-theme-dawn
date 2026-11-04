@@ -1,0 +1,299 @@
+<style>
+  /* ===== Caprasimo ===== */
+  @font-face {
+    font-family: "Caprasimo";
+    src: url('{{ "caprasimo-regular.ttf" | asset_url }}') format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ===== Sofia Pro ===== */
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro UltraLight Az.otf" | asset_url }}') format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro UltraLight Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro ExtraLight Az.otf" | asset_url }}') format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro ExtraLight Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 200;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Light Az.otf" | asset_url }}') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Light Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Regular Az.otf" | asset_url }}') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Regular Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Medium Az.otf" | asset_url }}') format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Medium Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Semi Bold Az.otf" | asset_url }}') format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Semi Bold Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 600;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Bold Az.otf" | asset_url }}') format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Bold Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 700;
+    font-style: italic;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Black Az.otf" | asset_url }}') format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Sofia Pro";
+    src: url('{{ "Sofia Pro Black Italic Az.otf" | asset_url }}') format("opentype");
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+  }
+
+  /* ===== ZawyaPro Condensed ===== */
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedThin.otf" | asset_url }}') format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedExtraLight.otf" | asset_url }}') format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedLight.otf" | asset_url }}') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedNormal.otf" | asset_url }}') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedMedium.otf" | asset_url }}') format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedSemiBold.otf" | asset_url }}') format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedBold.otf" | asset_url }}') format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Condensed";
+    src: url('{{ "ZawyaPro-CondensedBlack.otf" | asset_url }}') format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ===== ZawyaPro Normal ===== */
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalThin.otf" | asset_url }}') format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalExtraLight.otf" | asset_url }}') format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalLight.otf" | asset_url }}') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalNormal.otf" | asset_url }}') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalMedium.otf" | asset_url }}') format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalSemiBold.otf" | asset_url }}') format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalBold.otf" | asset_url }}') format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro";
+    src: url('{{ "ZawyaPro-NormalBlack.otf" | asset_url }}') format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* ===== ZawyaPro Wide ===== */
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideThin.otf" | asset_url }}') format("opentype");
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideExtraLight.otf" | asset_url }}') format("opentype");
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideLight.otf" | asset_url }}') format("opentype");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideNormal.otf" | asset_url }}') format("opentype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideMedium.otf" | asset_url }}') format("opentype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideSemiBold.otf" | asset_url }}') format("opentype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideBold.otf" | asset_url }}') format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "ZawyaPro Wide";
+    src: url('{{ "ZawyaPro-WideBlack.otf" | asset_url }}') format("opentype");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+  }
+</style>
+
