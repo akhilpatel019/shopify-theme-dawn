@@ -130,12 +130,56 @@
         "bg_color": "",
         "bg_gradient": ""
       }
+    },
+    "how_it_work_md3XMq": {
+      "type": "how-it-work",
+      "blocks": {
+        "steps_card_Bh3VMd": {
+          "type": "steps-card",
+          "settings": {
+            "step_title": "<h5>Choose & order your<br/>painting kits.</h5>",
+            "step_num": 1
+          }
+        },
+        "steps_card_QLCmYA": {
+          "type": "steps-card",
+          "settings": {
+            "step_title": "<h5>Receive<br/>your supplies.</h5>",
+            "step_num": 2
+          }
+        },
+        "steps_card_fKLdtX": {
+          "type": "steps-card",
+          "settings": {
+            "step_title": "<h5>Paint your<br/>masterpiece.</h5>",
+            "step_num": 3
+          }
+        }
+      },
+      "block_order": [
+        "steps_card_Bh3VMd",
+        "steps_card_QLCmYA",
+        "steps_card_fKLdtX"
+      ],
+      "name": "How it Work",
+      "settings": {
+        "section_title": "How it works?",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "color",
+        "bg_color_source": "global_bg_1",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
     "main_hero_section_Dr79UB",
     "logo_carousel_EFcMjk",
     "nw_featured_collection_YUndBH",
-    "nw_collection_list_PctpDX"
+    "nw_collection_list_PctpDX",
+    "how_it_work_md3XMq"
   ]
 }
