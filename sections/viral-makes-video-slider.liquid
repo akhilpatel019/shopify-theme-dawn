@@ -1,0 +1,357 @@
+{% render 'common-settings', section: section %}
+{{ 'viral-makes.css' | asset_url | stylesheet_tag }}
+
+<div class="viral-makes-video-slider">
+  <div class="page-width">
+    <h2 class="section-title">{{ section.settings.section_title }}</h2>
+  </div>
+
+  <div class="swiper videoSwiper">
+    <div class="swiper-wrapper">
+      {% for block in section.blocks %}
+        {% render 'video-block', block: block %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if section.blocks.size > 1 %}
+  <div class="video-swiper-controls">
+    <button class="video-swiper-prev" aria-label="Previous slide">
+      <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="#0C187E"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M15 18l-6-6 6-6" />
+      </svg>
+    </button>
+
+    <div class="swiper-pagination video-swiper-pagination"></div>
+
+    <button class="video-swiper-next" aria-label="Next slide">
+      <svg
+        viewBox="0 0 24 24"
+        width="24"
+        height="24"
+        fill="none"
+        stroke="#0C187E"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M9 18l6-6-6-6" />
+      </svg>
+    </button>
+  </div>
+  {% endif %}
+</div>
+
+<script>
+(function() {
+  let videoSwiperInstance = null;
+
+  function initVideoSlider() {
+    const sectionElement = document.querySelector('#shopify-section-{{ section.id }}');
+    if (!sectionElement) return;
+
+    const swiperEl = sectionElement.querySelector('.videoSwiper');
+    if (!swiperEl) return;
+
+    const slidesCount = swiperEl.querySelectorAll('.swiper-slide').length;
+    const canLoop = slidesCount > 2;
+
+    if (typeof Swiper !== 'undefined' && !videoSwiperInstance) {
+      videoSwiperInstance = new Swiper(swiperEl, {
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+        centeredSlides: slidesCount > 1,
+        loop: canLoop,
+        watchOverflow: true,
+        autoplay: canLoop ? {
+          delay: 3000,
+          disableOnInteraction: true,
+          pauseOnMouseEnter: true,
+        } : false,
+        pagination: {
+          el: sectionElement.querySelector('.video-swiper-pagination'),
+          clickable: true,
+        },
+        navigation: {
+          nextEl: sectionElement.querySelector('.video-swiper-next'),
+          prevEl: sectionElement.querySelector('.video-swiper-prev'),
+        },
+        breakpoints: {
+          0: { spaceBetween: 14 },
+          480: { spaceBetween: 16 },
+          768: { spaceBetween: 20 },
+          1024: { spaceBetween: 24 },
+        },
+        on: {
+          touchStart() {
+            if (this.autoplay && this.autoplay.running) this.autoplay.stop();
+          },
+          slideChange() {
+            sectionElement.querySelectorAll('.video-card video').forEach((v) => {
+              if (!v.paused) {
+                v.pause();
+                const card = v.closest('.video-card');
+                if (card) card.classList.remove('is-playing');
+              }
+            });
+          },
+        },
+      });
+    }
+
+    // Event delegation for clicks on any video poster / play button (works on cloned loop slides too)
+    if (!sectionElement.dataset.videoClickBound) {
+      sectionElement.dataset.videoClickBound = 'true';
+
+      sectionElement.addEventListener('click', (e) => {
+        const posterBox = e.target.closest('.video-poster-box');
+        if (!posterBox) return;
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const card = posterBox.closest('.video-card');
+        const video = posterBox.querySelector('video');
+        if (!video || !card) return;
+
+        // Stop slider autoplay when user plays a video
+        if (videoSwiperInstance && videoSwiperInstance.autoplay && videoSwiperInstance.autoplay.running) {
+          videoSwiperInstance.autoplay.stop();
+        }
+
+        // Pause all other playing videos
+        document.querySelectorAll('.video-card video').forEach((otherVid) => {
+          if (otherVid !== video && !otherVid.paused) {
+            otherVid.pause();
+            const otherCard = otherVid.closest('.video-card');
+            if (otherCard) otherCard.classList.remove('is-playing');
+          }
+        });
+
+        if (video.paused) {
+          const playPromise = video.play();
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                card.classList.add('is-playing');
+              })
+              .catch((err) => {
+                console.warn('Video playback was prevented:', err);
+              });
+          } else {
+            card.classList.add('is-playing');
+          }
+        } else {
+          video.pause();
+          card.classList.remove('is-playing');
+        }
+      });
+
+      // Reset is-playing when a video reaches the end
+      sectionElement.addEventListener('ended', (e) => {
+        if (e.target && e.target.tagName === 'VIDEO') {
+          const card = e.target.closest('.video-card');
+          if (card) card.classList.remove('is-playing');
+        }
+      }, true);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initVideoSlider);
+  } else {
+    initVideoSlider();
+  }
+
+  document.addEventListener('shopify:section:load', (e) => {
+    if (e.target.id === 'shopify-section-{{ section.id }}') {
+      videoSwiperInstance = null;
+      initVideoSlider();
+    }
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Viral makes video slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section settings"
+    },
+    {
+      "type": "text",
+      "default": "Viral makes this month!",
+      "id": "section_title",
+      "label": "Add section title"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom (desktop)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom (mobile)",
+      "min": 0,
+      "max": 200,
+      "step": 4,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "select",
+      "id": "bg_type",
+      "label": "Background type",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "color",
+          "label": "Color"
+        },
+        {
+          "value": "gradient",
+          "label": "Gradient"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "select",
+      "id": "bg_color_source",
+      "label": "Color source",
+      "options": [
+        {
+          "value": "global_primary",
+          "label": "Primary Color"
+        },
+        {
+          "value": "global_bg_1",
+          "label": "Background Color 1"
+        },
+        {
+          "value": "global_bg_2",
+          "label": "Background Color 2"
+        },
+        {
+          "value": "global_main_text",
+          "label": "Main Text Color"
+        },
+        {
+          "value": "global_black",
+          "label": "Black"
+        },
+        {
+          "value": "global_white",
+          "label": "White"
+        },
+        {
+          "value": "custom",
+          "label": "Custom Color"
+        }
+      ],
+      "default": "global_primary",
+      "visible_if": "{{ section.settings.bg_type == 'color' }}"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Custom background color",
+      "visible_if": "{{ section.settings.bg_type == 'color' and section.settings.bg_color_source == 'custom' }}"
+    },
+    {
+      "type": "color_background",
+      "id": "bg_gradient",
+      "label": "Background gradient",
+      "visible_if": "{{ section.settings.bg_type == 'gradient' }}"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image",
+      "visible_if": "{{ section.settings.bg_type == 'image' }}"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video-block",
+      "name": "Video block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "video_thumbnail",
+          "label": "Add video thumbnail"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Add video"
+        },
+        {
+          "type": "text",
+          "id": "video_title",
+          "label": "Add title",
+          "default": "Title"
+        }
+      ]
+    }
+  ],
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Viral makes video slider"
+    }
+  ]
+}
+{% endschema %}

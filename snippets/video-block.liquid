@@ -1,0 +1,23 @@
+{%- assign poster = block.settings.video_thumbnail | default: block.settings.video.preview_image -%}
+
+<div class="swiper-slide video-slide" {{ block.shopify_attributes }}>
+  <div class="video-card">
+    <div class="video-poster-box">
+      <video
+        {% if poster != blank %}poster="{{ poster | image_url: width: 800 }}"{% endif %}
+        playsinline
+        preload="metadata"
+      >
+        {% for source in block.settings.video.sources %}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {% endfor %}
+      </video>
+      <button class="play-btn" aria-label="Play Video">
+        <img src="https://cdn.shopify.com/s/files/1/0842/3030/7949/files/v-play-btn.svg?v=1793860698" alt="Play" />
+      </button>
+    </div>
+    <div class="video-card-info">
+      <h4>{{ block.settings.video_title }}</h4>
+    </div>
+  </div>
+</div>

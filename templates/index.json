@@ -173,6 +173,61 @@
         "bg_color": "",
         "bg_gradient": ""
       }
+    },
+    "viral_makes_video_slider_tpjqnQ": {
+      "type": "viral-makes-video-slider",
+      "blocks": {
+        "video_block_6bm4am": {
+          "type": "video-block",
+          "settings": {
+            "video_thumbnail": "shopify://shop_images/v-slide-1-img.png",
+            "video": "shopify://files/videos/720p_h264_10s.mp4",
+            "video_title": "Kids Painting Party"
+          }
+        },
+        "video_block_aiKPhN": {
+          "type": "video-block",
+          "settings": {
+            "video_thumbnail": "shopify://shop_images/v-slide-2-img.png",
+            "video": "shopify://files/videos/720p_h264_10s.mp4",
+            "video_title": "SOLO painting"
+          }
+        },
+        "video_block_RHXzKp": {
+          "type": "video-block",
+          "settings": {
+            "video_thumbnail": "shopify://shop_images/v-slide-3-img.png",
+            "video": "shopify://files/videos/720p_h264_10s.mp4",
+            "video_title": "Date Night Painting"
+          }
+        },
+        "video_block_LAdD4F": {
+          "type": "video-block",
+          "settings": {
+            "video_thumbnail": "shopify://shop_images/v-slide-4-img.png",
+            "video": "shopify://files/videos/720p_h264_10s.mp4",
+            "video_title": "Couple night painting"
+          }
+        }
+      },
+      "block_order": [
+        "video_block_6bm4am",
+        "video_block_aiKPhN",
+        "video_block_RHXzKp",
+        "video_block_LAdD4F"
+      ],
+      "name": "Viral makes video slider",
+      "settings": {
+        "section_title": "Viral makes this month!",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 32,
+        "padding_bottom_mobile": 32,
+        "bg_type": "none",
+        "bg_color_source": "global_primary",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
@@ -180,6 +235,7 @@
     "logo_carousel_EFcMjk",
     "nw_featured_collection_YUndBH",
     "nw_collection_list_PctpDX",
-    "how_it_work_md3XMq"
+    "how_it_work_md3XMq",
+    "viral_makes_video_slider_tpjqnQ"
   ]
 }
