@@ -228,6 +228,58 @@
         "bg_color": "",
         "bg_gradient": ""
       }
+    },
+    "review_box_slider_JKapXX": {
+      "type": "review-box-slider",
+      "blocks": {
+        "review_slide_3BpxJR": {
+          "type": "review_slide",
+          "settings": {
+            "review_img": "shopify://shop_images/review-card-img-1.png",
+            "review_name": "Latifah H.",
+            "review_title": "BEST DATE NIGHT EVER!",
+            "review_description": "<p>We had an amazing time & enjoyed the experience. The video was fun, easy, convenient, empowered to follow. It’s definitely an experience worth trying.<br/><br/></p>",
+            "review_painting_name": "Lovestruck Robot"
+          }
+        },
+        "review_slide_JRUNH3": {
+          "type": "review_slide",
+          "settings": {
+            "review_img": "shopify://shop_images/review-card-img-2.png",
+            "review_name": "Maria M.",
+            "review_title": "EVERYONE LOVED IT!",
+            "review_description": "<p>Lorem ipsum dolor sit amet consectetur. Convallis vel mus &nbsp;nisi orci nibh. Eget cras sit sem id placerat accumsan. Etultrices mi nisi sed lorem at massa interdum.<br/><br/></p>",
+            "review_painting_name": "Lotus"
+          }
+        },
+        "review_slide_bQWmXU": {
+          "type": "review_slide",
+          "settings": {
+            "review_img": "shopify://shop_images/review-card-img-3.png",
+            "review_name": "Emery A.",
+            "review_title": "PERFECT FAMILY ACTIVITY!",
+            "review_description": "<p>Everyone in the family participated and had a blast. Great step-by-step guidance. Will definitely be ordering more kits soon!</p>",
+            "review_painting_name": "Moonlight Palms"
+          }
+        }
+      },
+      "block_order": [
+        "review_slide_3BpxJR",
+        "review_slide_JRUNH3",
+        "review_slide_bQWmXU"
+      ],
+      "name": "Review Slider",
+      "settings": {
+        "section_title": "Join Over 200,000+ Happy Customers",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "bg_type": "color",
+        "bg_color_source": "global_bg_1",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
@@ -236,6 +288,7 @@
     "nw_featured_collection_YUndBH",
     "nw_collection_list_PctpDX",
     "how_it_work_md3XMq",
-    "viral_makes_video_slider_tpjqnQ"
+    "viral_makes_video_slider_tpjqnQ",
+    "review_box_slider_JKapXX"
   ]
 }

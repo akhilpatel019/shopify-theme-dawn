@@ -1,0 +1,36 @@
+<div class="swiper-slide review-slide" {{ block.shopify_attributes }}>
+  <div class="review-card">
+    <div class="review-card-img">
+
+{% if block.settings.review_img != blank %}
+  {{
+    block.settings.review_img
+    | image_url: width: 600
+    | image_tag: alt: 'Review photo', loading: 'lazy'
+  }}
+{% endif %}
+
+    </div>
+    <div class="review-card-header">
+      <div class="reviewer-info">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0842/3030/7949/files/verified-icon.svg?v=1793946935"
+          class="verified-icon"
+          alt="Verified"
+        />
+        <span class="reviewer-name">{{block.settings.review_name}}</span>
+      </div>
+      <div class="review-rating">
+        <img src="https://cdn.shopify.com/s/files/1/0842/3030/7949/files/five-star-icon_6409a632-7406-4309-b1c8-9a29cc2d7904.svg?v=1793946896" alt="5 Stars" />
+      </div>
+    </div>
+    <h3 class="review-card-title">{{block.settings.review_title}}</h3>
+    <div class="review-card-text">
+     {{block.settings.review_description}}
+    </div>
+    <div class="review-card-footer">
+      <span class="painted-label">Painted:</span>
+      <span class="painted-badge">{{block.settings.review_painting_name}}</span>
+    </div>
+  </div>
+</div>
