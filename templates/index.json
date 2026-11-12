@@ -345,7 +345,58 @@
         "padding_top_mobile": 60,
         "padding_bottom_mobile": 60,
         "bg_type": "color",
-        "bg_color_source": "global_bg_2",
+        "bg_color_source": "global_bg_1",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
+    },
+    "faq_section_3PNwDG": {
+      "type": "faq-section",
+      "blocks": {
+        "faq_item_CAW9Ft": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Where do you ship to?",
+            "faq_ans": "<p>Each kit includes pre-traced canvas, acrylic paints, brushes, an easel, and step-by-step video instructions. Everything you need to create a beautiful painting from start to finish.</p>"
+          }
+        },
+        "faq_item_H3gMpa": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "How do I get access to the video tutorial?",
+            "faq_ans": "<p>Not at all! Our kits are designed for complete beginners as well as experienced artists. The step-by-step video tutorials guide you through every brushstroke at your own pace.</p>"
+          }
+        },
+        "faq_item_TcXyqP": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "What colors are included in the kit?",
+            "faq_ans": "<p>Most paintings take between 1 to 2 hours to complete. It's the perfect activity to fit into an evening, a date night, or a family weekend — no long commitment needed.</p>"
+          }
+        },
+        "faq_item_ApTVBJ": {
+          "type": "faq_item",
+          "settings": {
+            "faq_qus": "Are the paints non-toxic?",
+            "faq_ans": "<p>Absolutely! Our kits make wonderful gifts. You can select gift wrapping at checkout and we'll include a personalized message card. Orders over $60 also qualify for free shipping.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_CAW9Ft",
+        "faq_item_H3gMpa",
+        "faq_item_TcXyqP",
+        "faq_item_ApTVBJ"
+      ],
+      "name": "Faq's",
+      "settings": {
+        "section_title": "FAQ",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "bg_type": "none",
+        "bg_color_source": "global_primary",
         "bg_color": "",
         "bg_gradient": ""
       }
@@ -360,6 +411,7 @@
     "viral_makes_video_slider_tpjqnQ",
     "review_box_slider_JKapXX",
     "nw_collection_list_type_2_BNWRPk",
-    "experience_section_d6zdCD"
+    "experience_section_d6zdCD",
+    "faq_section_3PNwDG"
   ]
 }
