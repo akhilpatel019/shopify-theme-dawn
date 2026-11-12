@@ -303,6 +303,52 @@
         "bg_color": "",
         "bg_gradient": ""
       }
+    },
+    "experience_section_d6zdCD": {
+      "type": "experience-section",
+      "blocks": {
+        "exp_block_ddyFVQ": {
+          "type": "exp-block",
+          "settings": {
+            "exp-img": "shopify://shop_images/process-1-img.png",
+            "exp-title": "HAVE CREATIVE FUN time",
+            "exp_desc": "<p>Spend your time drawing our interesting and exciting pictures. We offer a wide range of products for every taste!</p>"
+          }
+        },
+        "exp_block_pqWCqP": {
+          "type": "exp-block",
+          "settings": {
+            "exp-img": "shopify://shop_images/process-2-img.png",
+            "exp-title": "Fun & Easy to follow",
+            "exp_desc": "<p>Our step-by-step video guidance ensures that even beginners can enjoy the process.<br/><br/></p>"
+          }
+        },
+        "exp_block_KQTrVp": {
+          "type": "exp-block",
+          "settings": {
+            "exp-img": "shopify://shop_images/process-3-img.png",
+            "exp-title": "Fits into your schedule",
+            "exp_desc": "<p>Time-efficient activity that you can easily fit into your busy day, providing a refreshing break that lasts 1-2 hours.<br/><br/></p>"
+          }
+        }
+      },
+      "block_order": [
+        "exp_block_ddyFVQ",
+        "exp_block_pqWCqP",
+        "exp_block_KQTrVp"
+      ],
+      "name": "Experience section",
+      "settings": {
+        "section_title": "A Must Try Experience",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "bg_type": "color",
+        "bg_color_source": "global_bg_2",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
@@ -313,6 +359,7 @@
     "how_it_work_md3XMq",
     "viral_makes_video_slider_tpjqnQ",
     "review_box_slider_JKapXX",
-    "nw_collection_list_type_2_BNWRPk"
+    "nw_collection_list_type_2_BNWRPk",
+    "experience_section_d6zdCD"
   ]
 }

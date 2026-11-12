@@ -1,0 +1,14 @@
+<div class="exp-step-item" {{ block.shopify_attributes }}>
+    {% if block.settings.exp-img != blank %}
+      <img
+        src="{{ block.settings.exp-img | image_url: width: 600 }}"
+        alt="{{ block.settings.exp-img.alt | escape }}"
+        loading="lazy"
+      />
+    {% endif %}
+
+    <div class="exp-item-text">
+      <h3>{{ block.settings.exp-title }}</h3>
+      {{ block.settings.exp_desc }}
+    </div>
+</div>
