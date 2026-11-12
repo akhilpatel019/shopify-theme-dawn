@@ -280,6 +280,29 @@
         "bg_color": "",
         "bg_gradient": ""
       }
+    },
+    "nw_collection_list_type_2_BNWRPk": {
+      "type": "nw-collection-list-type-2",
+      "name": "Collection list 2.0",
+      "settings": {
+        "section_title": "Shop Collections",
+        "collection_list": [
+          "spring",
+          "summer",
+          "fall",
+          "winter",
+          "classical",
+          "landscape"
+        ],
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60,
+        "bg_type": "none",
+        "bg_color_source": "global_primary",
+        "bg_color": "",
+        "bg_gradient": ""
+      }
     }
   },
   "order": [
@@ -289,6 +312,7 @@
     "nw_collection_list_PctpDX",
     "how_it_work_md3XMq",
     "viral_makes_video_slider_tpjqnQ",
-    "review_box_slider_JKapXX"
+    "review_box_slider_JKapXX",
+    "nw_collection_list_type_2_BNWRPk"
   ]
 }
